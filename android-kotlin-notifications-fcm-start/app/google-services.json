@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "527961295897",
+    "firebase_url": "https://fcm-codelab-1440f.firebaseio.com",
+    "project_id": "fcm-codelab-1440f",
+    "storage_bucket": "fcm-codelab-1440f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527961295897:android:c57c08ef08657c938aee88",
+        "android_client_info": {
+          "package_name": "com.example.android.eggtimernotifications"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "527961295897-i5f8dsbfqmjaergit4im3lc9i1k2086g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgTh7f253kyUButdQ5Gi1rql65XJiRCNw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "527961295897-i5f8dsbfqmjaergit4im3lc9i1k2086g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
