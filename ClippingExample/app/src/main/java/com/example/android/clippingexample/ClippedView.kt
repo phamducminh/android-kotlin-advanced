@@ -2,6 +2,7 @@ package com.example.android.clippingexample
 
 import android.content.Context
 import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Path
 import android.util.AttributeSet
@@ -58,6 +59,13 @@ class ClippedView @JvmOverloads constructor(
     }
 
     private fun drawBackAndUnclippedRectangle(canvas: Canvas) {
+        with(canvas) {
+            drawColor(Color.GRAY)
+            save()
+            translate(columnOne, rowOne)
+            drawClippedRectangle(this)
+            restore()
+        }
     }
 
     private fun drawDifferenceClippingExample(canvas: Canvas) {
@@ -85,5 +93,38 @@ class ClippedView @JvmOverloads constructor(
     }
 
     private fun drawQuickRejectExample(canvas: Canvas) {
+    }
+
+    private fun drawClippedRectangle(canvas: Canvas) {
+        canvas.clipRect(
+            clipRectLeft, clipRectTop,
+            clipRectRight, clipRectBottom
+        )
+
+        canvas.drawColor(Color.WHITE)
+
+        paint.color = Color.RED
+        canvas.drawLine(
+            clipRectLeft, clipRectTop,
+            clipRectRight, clipRectBottom, paint
+        )
+
+        paint.color = Color.GREEN
+        canvas.drawCircle(
+            circleRadius, clipRectBottom - circleRadius,
+            circleRadius, paint
+        )
+
+        paint.apply {
+            color = Color.BLUE
+            // Align the RIGHT side of the text with the origin
+            textSize = textSize
+            textAlign = Paint.Align.RIGHT
+            canvas.drawText(
+                context.getString(R.string.clipping),
+                clipRectRight, textOffset, this
+            )
+        }
+
     }
 }
